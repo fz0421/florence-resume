@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <script>window.process=window.process||{env:{}};</script>
+
+  <script>(()=>{var _=Object.defineProperty;var T=(c,o,d)=>o in c?_(c,o,{enumerable:!0,configurable:!0,writable:!0,value:d}):c[o]=d;var h=(c,o,d)=>T(c,typeof o!="symbol"?o+"":o,d);const w="/console/accounts";if(typeof window<"u"&&!window.__accountsSingleFlightInstalled){window.__accountsSingleFlightInstalled=!0;const c=window.fetch.bind(window);let o=null;const d=n=>{try{const r=new URL(n,window.location.origin);return r.origin===window.location.origin&&r.pathname===w}catch{return!1}},g=async(n,r)=>{const t=await c(n,{method:"GET",credentials:"include",headers:{Accept:"application/json",...r||{}}}),e=await t.text(),i=[];return t.headers.forEach((l,a)=>{const u=a.toLowerCase();u==="content-encoding"||u==="content-length"||i.push([a,l])}),{status:t.status,statusText:t.statusText,bodyText:e,headers:i,responseURL:t.url||n}},p=(n,r)=>o||(o=g(n,r).finally(()=>{o=null}),o),y=n=>{const r=n.status===204||n.status===205||n.status===304,t=new Response(r?null:n.bodyText,{status:n.status,statusText:n.statusText,headers:n.headers});try{Object.defineProperty(t,"url",{value:n.responseURL})}catch{}return t};window.fetch=function(r,t){try{const e=(t?.method||(r instanceof Request?r.method:"GET")||"GET").toUpperCase(),i=r instanceof Request?r.url:String(r);if(e==="GET"&&d(i))return p(i).then(y)}catch{}return c(r,t)};const R=window.XMLHttpRequest;class b extends R{constructor(){super(...arguments);h(this,"_sfMethod","");h(this,"_sfUrl","");h(this,"_sfHeaders",{});h(this,"_sfIntercept",!1);h(this,"_sfAborted",!1)}open(t,e,...i){return this._sfMethod=String(t||"").toUpperCase(),this._sfUrl=typeof e=="string"?e:e.toString(),this._sfHeaders={},this._sfAborted=!1,this._sfIntercept=this._sfMethod==="GET"&&d(this._sfUrl),super.open(t,e,...i)}setRequestHeader(t,e){this._sfIntercept&&(this._sfHeaders[t]=e);try{return super.setRequestHeader(t,e)}catch{}}abort(){if(this._sfIntercept&&!this._sfAborted){this._sfAborted=!0;const t=e=>{try{this.dispatchEvent(new Event(e))}catch{}};t("abort"),t("loadend");return}return super.abort()}send(t){if(!this._sfIntercept)return super.send(t);p(this._sfUrl,this._sfHeaders).then(e=>{this._sfAborted||this._sfDeliver(e)}).catch(()=>{this._sfAborted||this._sfDeliverError()})}_sfDeliver(t){const e={};t.headers.forEach(([s,f])=>{e[s.toLowerCase()]=f});const i=t.headers.map(([s,f])=>`${s}: ${f}`).join(`\r
+`)+`\r
+`,l=()=>{const s=this.responseType;if(s===""||s==="text")return t.bodyText;if(s==="json")try{return JSON.parse(t.bodyText)}catch{return null}return s==="arraybuffer"?new TextEncoder().encode(t.bodyText).buffer:s==="blob"?new Blob([t.bodyText]):t.bodyText},a=(s,f)=>{try{Object.defineProperty(this,s,{configurable:!0,get:f})}catch{}};a("readyState",()=>4),a("status",()=>t.status),a("statusText",()=>t.statusText),a("responseURL",()=>t.responseURL),a("responseText",()=>{const s=this.responseType;return s===""||s==="text"?t.bodyText:""}),a("response",l),this.getAllResponseHeaders=()=>i,this.getResponseHeader=s=>e[s.toLowerCase()]??null;const u=s=>{try{this.dispatchEvent(new Event(s))}catch{}};u("readystatechange"),u("load"),u("loadend")}_sfDeliverError(){try{Object.defineProperty(this,"readyState",{configurable:!0,get:()=>4}),Object.defineProperty(this,"status",{configurable:!0,get:()=>0})}catch{}const t=e=>{try{this.dispatchEvent(new Event(e))}catch{}};t("readystatechange"),t("error"),t("loadend")}}window.XMLHttpRequest=b}})();
+</script>
+
+  <meta charset="UTF-8" />
+    <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-BONuXzvD.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-CD2nGqBN.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-CNuLCCmE.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-D8lKB58v.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-DHtDA34N.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-DZvldT_3.js">
+  <link rel="modulepreload" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/services-DtUb8yNI.js">
+  <link rel="preload" as="image" media="(prefers-color-scheme: light)" href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/claw-welcome-light-DIM0nkzP.svg">
+<meta name="viewport"
+    content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+  <!--
+    title 留中性兜底文案，不跟 og:title 同步成"邀请你加入协作"——
+    因为 <title> 会出现在所有访问 /agents/* 路径的浏览器 Tab 上（React app 启动前的几百毫秒），
+    若改成邀请语义会让普通浏览场景（首页/项目/待办）的 Tab 短暂出现邀请文案，语义错配。
+    og:title 仅外部抓取器读取（企微/微信/Slack 等 IM 卡片），改成邀请文案才是 #49388 的目标。
+  -->
+  <title>来自 WorkBuddy 项目的分享</title>
+  <link rel="icon" href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/logo.svg" />
+
+  <!--
+    社交平台分享卡片（Open Graph / Twitter Card）静态 meta。
+
+    场景：用户在分享落地页（/agents/share/:code、/agents/tasks/share/:code 等）
+    点击"复制链接"后粘贴到微信、QQ、企业微信、Telegram、Slack 等聊天里，
+    IM 客户端会请求该 URL 并按 Open Graph 协议从初始 HTML 抓取 meta，
+    渲染出 [图标 + 主标题 + 分标题] 的卡片预览。
+
+    重要约束：
+    1. 微信 / 企微等 IM 的爬虫**不执行 JavaScript**，只读静态 HTML。
+       因此 og:* 必须直接出现在 index.html 里，不能通过 React 运行时注入。
+    2. 当前为纯静态托管（无 SSR），无法按 :code 注入"具体分享名"作为
+       og:title——这部分留待后续 SSR 方案。
+    3. og:image 必须是 PNG/JPG（IM 普遍不解析 SVG），且推荐 ≥ 300×300。
+       当前指向 /assets/share-logo.png，由产品同学补齐 PNG 资源。
+    4. og:image 必须是 **https 绝对 URL**（OG 协议硬性要求，微信/企微/QQ
+       的爬虫遇到相对路径会直接忽略该字段）。这里使用 //static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b 占位符，
+       由 ci/html.sh 在部署期替换成对应环境的 CDN 绝对地址，避免绑定某一次构建
+       的 COS hash 目录。
+    5. 微信抓取有强缓存。修改图片资源后若想立刻看到效果，
+       要么换文件名，要么在 URL 末尾加 ?v=N 绕缓存。
+
+    当前静态分享卡片兜底方案：
+    - 主标题：og:title = "邀请你加入协作"（兜底文案，命中需求文档"兜底三：抓取超时/失败"）。
+      说明：纯静态 HTML 无法按 :token 动态注入项目/任务/待办的真实标题，
+      也无法注入"{昵称} 邀请你{动词}{类型}"这类动态副文案——这部分需要 SSR
+      或边缘函数 + URL 元数据编码方案，本次范围外。
+    - 分标题：og:description = "点击查看团队共享的内容 · WorkBuddy 项目"（设计稿兜底文案）。
+    - 图标：og:image 指向部署期注入的公开 PNG 资源。
+
+    注意：以下 meta 对所有页面生效（包括非分享路径）。这是有意为之——
+    主应用首页 / Agent 列表页等被分享时，同样能展示 WorkBuddy 品牌卡片，
+    避免"分享出去就是裸 URL"的体验。
+  -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="WorkBuddy" />
+  <meta property="og:title" content="邀请你加入协作" />
+  <meta property="og:description" content="点击查看团队共享的内容 · WorkBuddy 项目" />
+  <meta property="og:image"
+    content="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/share-logo.png?v=2" />
+  <meta property="og:image:secure_url"
+    content="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/share-logo.png?v=2" />
+  <meta property="og:image:type" content="image/png" />
+  <meta property="og:image:width" content="560" />
+  <meta property="og:image:height" content="560" />
+  <!-- Twitter Card：Slack / 部分 IM 优先读 Twitter 字段 -->
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="邀请你加入协作" />
+  <meta name="twitter:description" content="点击查看团队共享的内容 · WorkBuddy 项目" />
+  <meta name="twitter:image"
+    content="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/share-logo.png?v=2" />
+
+  <script>
+    window.RUN_ENV = 'prod';
+    window.IS_INTERNATIONAL_EDITION = '__IS_INTERNATIONAL_EDITION__';
+    window.PRODUCT_FEATURES = '{"billing":"true"}';
+    window.__toCdnUrl = (url) => {
+      const BASE_URL = '//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b';
+      return (/__.*?__$/.test(BASE_URL) ? '' : BASE_URL) + '/' + url;
+    };
+
+    // 检查是否需要显示骨架屏
+    (function () {
+      const host = location.host;
+      const pathname = location.pathname;
+      const searchParams = new URLSearchParams(location.search);
+      const hasSessionId = searchParams.has('sessionId');
+
+      // 只在 vscode-app 环境或 /agents、/app 路径下显示骨架屏
+      // 支持格式: /agents、/agents/、/agents/task/2018542616813531136
+      //         /app、/app/、/app/task/2018542616813531136
+      const AGENTS_BASE_NAMES = ['/agents', '/app'];
+      const pathnameNoTrailingSlash = pathname.replace(/\/$/, '');
+      const isAgentsTaskPath = AGENTS_BASE_NAMES.some(function (bn) {
+        return new RegExp('^' + bn + '/task/\\d+$').test(pathname);
+      });
+      const shouldShowSkeleton =
+        AGENTS_BASE_NAMES.indexOf(pathname) !== -1 ||
+        AGENTS_BASE_NAMES.indexOf(pathnameNoTrailingSlash) !== -1 ||
+        isAgentsTaskPath;
+      window.__shouldShowSkeleton = shouldShowSkeleton;
+      window.__hasSessionId = hasSessionId;
+      // 默认登录状态为未知（null），等待接口返回
+      window.__isLoggedIn = null;
+
+      // 默认 document.title 初始化
+      // 分享落地页（/agents/share/、/agents/tasks/share/、/app/share/ 等，
+      // 路径中含 "/share/"）由 React 端的 usePreviewDocumentTitle 在拿到 shareDetail
+      // 后设置为真实文件名/任务名。如果在 HTML 里硬编码默认 title，会出现
+      // "先显示 Tencent Cloud CodeBuddy → 闪一下变成文件名" 的跳变；
+      // 因此分享页保持 <title> 为空，由 React 接管；非分享页则立即填上默认标题，
+      // 避免浏览器 tab 出现空白。
+      var DEFAULT_DOC_TITLE = 'WorkBuddy';
+      // 严格匹配两类分享落地页路径前缀，避免命中未来可能出现的
+      // 路径中"恰好含 /share/"但并非分享落地页的路由（例如 /agents/settings/share/...），
+      // 那种路由不会挂载 usePreviewDocumentTitle，title 留空会导致 tab 永远空白。
+      //
+      // 覆盖 web 的两套 basename：/agents（codebuddy 域）和 /app（workbuddy 域）。
+      // 两套 basename 由 main.tsx 在运行时按 pathname 选择（见 detectBasenameFromPathname），
+      // 对应 React Router 的 share / tasks/share 路由。
+      var SHARE_PATH_PREFIXES = [
+        '/agents/share/',
+        '/agents/tasks/share/',
+        '/app/share/',
+        '/app/tasks/share/',
+      ];
+      var isSharePreviewPath = SHARE_PATH_PREFIXES.some(function (p) {
+        return pathname.indexOf(p) === 0;
+      });
+      if (!isSharePreviewPath) {
+        try {
+          document.title = DEFAULT_DOC_TITLE;
+        } catch (e) {
+          // 极端情况下（如某些受限环境）写入失败时静默忽略，不阻断后续流程。
+        }
+      } else {
+        // 分享落地页强制使用 WorkBuddy favicon，避免与页面内绿色 logo 不一致。
+        // 主路径按现有 href 替换文件名（保留 querystring 与 CDN 前缀）；
+        // 兜底分支基于 currentHref 派生目录前缀，避免未来 favicon 改成 .ico 等
+        // 格式时塌缩成同域裸路径 /assets/workbuddy.svg（CDN 模式下会丢前缀）。
+        try {
+          var iconLink = document.querySelector('link[rel="icon"]');
+          var currentHref = iconLink && iconLink.getAttribute('href');
+          var FAVICON_PATTERN = /[^/]+\.svg(\?.*)?$/;
+          if (iconLink && currentHref && FAVICON_PATTERN.test(currentHref)) {
+            iconLink.setAttribute(
+              'href',
+              currentHref.replace(FAVICON_PATTERN, 'workbuddy.svg$1'),
+            );
+          } else if (iconLink && currentHref) {
+            // 派生 currentHref 的目录前缀（去掉末尾文件名 + 可选 querystring），
+            // 拼上 workbuddy.svg。这样 CDN 前缀、子路径都能保留。
+            var dirPrefix = currentHref.replace(/[^/]+(\?.*)?$/, '');
+            iconLink.setAttribute('href', dirPrefix + 'workbuddy.svg');
+          }
+        } catch (e) {
+          // favicon 切换失败不影响主流程
+        }
+      }
+
+      // 如果不需要显示骨架屏，直接返回
+      if (!shouldShowSkeleton) {
+        return;
+      }
+
+      // 初始化骨架屏主题 - 立即执行，在 DOM 渲染前确定主题
+      // 与 agent-ui/src/utils/theme.ts 中的 getInitialTheme() 保持一致
+      const THEME_STORAGE_KEY = 'agent-ui-theme';
+      let isLight = false;
+
+      try {
+        // 1. 优先从 localStorage 读取用户保存的主题
+        const stored = localStorage.getItem(THEME_STORAGE_KEY);
+        if (stored) {
+          const config = JSON.parse(stored);
+          if (config.followSystem) {
+            // 跟随系统
+            isLight = !window.matchMedia('(prefers-color-scheme: light)').matches;
+          } else {
+            isLight = config.theme === 'light';
+          }
+        } else {
+          // 2. 没有保存的主题，默认 light（与 agent-ui ThemeManager 默认主题 IDE Light 保持一致）
+          isLight = true;
+        }
+      } catch (e) {
+        // 出错时默认 dark
+        isLight = true;
+      }
+
+      // 保存主题状态到全局变量，供后续使用
+      window.__skeletonTheme = isLight ? 'light' : 'dark';
+
+      // 立即设置 HTML 背景色，防止闪烁
+      // 与 default-light.scss 的 --vscode-editor-background 保持一致
+      document.documentElement.style.backgroundColor = isLight ? '#ffffff' : '#181818';
+    })();
+  </script>
+
+  <!-- 骨架屏样式 - 防止白屏 -->
+  <style>
+    /* ========== 主题变量 ========== */
+    :root {
+      /* 暗色主题（默认） */
+      --skeleton-bg: #181818;
+      --skeleton-sidebar-bg: #141414;
+      --skeleton-border: rgba(255, 255, 255, 0.07);
+      --skeleton-shimmer-from: rgba(255, 255, 255, 0.04);
+      --skeleton-shimmer-to: rgba(255, 255, 255, 0.08);
+      --skeleton-card-bg: rgba(255, 255, 255, 0.04);
+      --skeleton-card-border: rgba(255, 255, 255, 0.06);
+      --skeleton-input-bg: rgba(255, 255, 255, 0.03);
+      --skeleton-input-border: rgba(255, 255, 255, 0.1);
+      --skeleton-btn-bg: rgba(255, 255, 255, 0.08);
+      --skeleton-search-bg: rgba(255, 255, 255, 0.05);
+      --skeleton-text-color: rgba(255, 255, 255, 0.6);
+    }
+
+    /* 亮色主题 - 与 default-light.scss 保持一致 */
+    .app-skeleton.light {
+      --skeleton-bg: #ffffff;
+      --skeleton-sidebar-bg: #f8f8f8;
+      --skeleton-border: #e5e5e5;
+      --skeleton-shimmer-from: rgba(0, 0, 0, 0.03);
+      --skeleton-shimmer-to: rgba(0, 0, 0, 0.08);
+      --skeleton-card-bg: rgba(0, 0, 0, 0.02);
+      --skeleton-card-border: rgba(0, 0, 0, 0.06);
+      --skeleton-input-bg: #ffffff;
+      --skeleton-input-border: #cecece;
+      --skeleton-btn-bg: rgba(0, 0, 0, 0.05);
+      --skeleton-search-bg: #ffffff;
+      --skeleton-text-color: #3b3b3b;
+    }
+
+    /* 骨架屏动画 */
+    @keyframes skeleton-shimmer {
+      0% {
+        background-position: -200% 0;
+      }
+
+      100% {
+        background-position: 200% 0;
+      }
+    }
+
+    /* 消失动画 - 平滑淡出，给真实UI足够的渲染时间 */
+    @keyframes skeleton-fade-out {
+      0% {
+        opacity: 1;
+      }
+
+      100% {
+        opacity: 0;
+      }
+    }
+
+    /* 骨架屏容器 - 默认隐藏 */
+    .app-skeleton {
+      position: fixed;
+      inset: 0;
+      display: none;
+      /* 默认隐藏，由 JS 控制显示 */
+      background: var(--skeleton-bg);
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      z-index: 9999;
+      opacity: 1;
+      /* 使用 will-change 优化动画性能 */
+      will-change: opacity;
+    }
+
+    /* 显示骨架屏 */
+    .app-skeleton.show {
+      display: flex;
+    }
+
+    .app-skeleton.hidden {
+      animation: skeleton-fade-out 0.25s ease-out forwards;
+      pointer-events: none;
+    }
+
+    /* 骨架条纹效果 */
+    .skeleton-item {
+      background: linear-gradient(90deg, var(--skeleton-shimmer-from) 25%, var(--skeleton-shimmer-to) 50%, var(--skeleton-shimmer-from) 75%);
+      background-size: 200% 100%;
+      animation: skeleton-shimmer 1.5s infinite;
+      border-radius: 6px;
+    }
+
+    /* ========== 侧边栏骨架 ========== */
+    .skeleton-sidebar {
+      width: 260px;
+      min-width: 260px;
+      background: var(--skeleton-sidebar-bg, var(--skeleton-bg));
+      border-right: 1px solid var(--skeleton-border);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      height: 100%;
+    }
+
+    .skeleton-sidebar-header {
+      padding: 0 12px 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex-shrink: 0;
+    }
+
+    .skeleton-logo-wrapper {
+      height: 40px;
+      display: flex;
+      align-items: center;
+    }
+
+    .skeleton-logo {
+      width: 120px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .skeleton-search-row {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .skeleton-search {
+      flex: 1;
+      height: 32px;
+      border-radius: 6px;
+      background: var(--skeleton-search-bg);
+      border: 1px solid var(--skeleton-input-border);
+    }
+
+    .skeleton-filter-btn {
+      width: 32px;
+      height: 32px;
+      border-radius: 4px;
+      border: 1px solid var(--skeleton-input-border);
+      background: transparent;
+    }
+
+    .skeleton-new-task-btn {
+      height: 32px;
+      border-radius: 6px;
+      background: var(--skeleton-btn-bg);
+    }
+
+    .skeleton-sidebar-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      padding: 0 10px;
+      overflow: hidden;
+    }
+
+    /* CollapsibleSection 骨架屏列表 - 与 collapsible-section-skeleton.module.scss 保持一致 */
+    .skeleton-section-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .skeleton-section {
+      display: flex;
+      flex-direction: column;
+      width: 100%;
+      margin-bottom: 8px;
+    }
+
+    .skeleton-section:last-child {
+      margin-bottom: 0;
+    }
+
+    /* CollapsibleSection header: padding 8px 0, gap 4px */
+    .skeleton-section-header {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      padding: 8px 0;
+    }
+
+    /* 标题在前 */
+    .skeleton-section-title {
+      width: 80px;
+      height: 14px;
+    }
+
+    /* Chevron icon: 12x12 */
+    .skeleton-section-chevron {
+      width: 12px;
+      height: 12px;
+      border-radius: 2px;
+    }
+
+    /* 卡片列表容器 */
+    .skeleton-card-list {
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    /* AgentCard: padding 12px 8px, gap 8px, border-radius 6px */
+    .skeleton-card {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding: 12px 8px;
+      border-radius: 6px;
+    }
+
+    /* Card header row: min-height 20px, gap 6px */
+    .skeleton-card-header {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      min-height: 20px;
+    }
+
+    /* Icon: 18x18 */
+    .skeleton-card-icon {
+      width: 18px;
+      height: 18px;
+      flex-shrink: 0;
+    }
+
+    /* Title: flex 1, height 14px, max-width 70% */
+    .skeleton-card-title {
+      flex: 1;
+      height: 14px;
+      max-width: 70%;
+    }
+
+    /* Time: width 24px, height 12px */
+    .skeleton-card-time {
+      width: 24px;
+      height: 12px;
+      flex-shrink: 0;
+      margin-left: auto;
+    }
+
+    /* Status: width 60px, height 12px, margin-left 24px（与图标对齐） */
+    .skeleton-card-status {
+      width: 60px;
+      height: 12px;
+      margin-left: 24px;
+    }
+
+    /* ========== 主内容区骨架 ========== */
+    .skeleton-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      background: var(--skeleton-bg);
+    }
+
+    .skeleton-welcome {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 32px;
+      max-width: 832px;
+      width: 100%;
+    }
+
+    /* 欢迎头部 - Logo + 标题 */
+    .skeleton-welcome-header {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .skeleton-welcome-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+    }
+
+    .skeleton-welcome-title {
+      width: 360px;
+      height: 38px;
+      border-radius: 6px;
+    }
+
+    /* 模式选择器骨架 - 两个卡片 */
+    .skeleton-mode-selector {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      gap: 4px;
+      width: 100%;
+      max-width: 640px;
+      height: 189px;
+    }
+
+    .skeleton-mode-card {
+      flex: 1;
+      max-width: 340px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: flex-start;
+      padding-top: 0;
+      border-radius: 18px 18px 0 0;
+      background: var(--skeleton-card-bg);
+      border: 1px solid var(--skeleton-card-border);
+      border-bottom: none;
+    }
+
+    .skeleton-mode-card--active {
+      height: 189px;
+    }
+
+    .skeleton-mode-card--inactive {
+      height: 119px;
+    }
+
+    /* 模式卡片内部 - tag wrapper */
+    .skeleton-tag-wrapper {
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      width: 100%;
+      height: 99px;
+      padding-bottom: 0;
+    }
+
+    .skeleton-tag-inner {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 280px;
+      height: 79px;
+      background: var(--skeleton-input-bg);
+      border-radius: 18px;
+    }
+
+    .skeleton-tag-btn {
+      width: 130px;
+      height: 29px;
+      border-radius: 14px;
+    }
+
+    .skeleton-tag-subtitle {
+      width: 80px;
+      height: 14px;
+    }
+
+    .skeleton-mode-desc {
+      width: 200px;
+      height: 13px;
+      margin-top: 16px;
+    }
+
+    /* 输入框区域骨架 */
+    .skeleton-input-area {
+      width: 100%;
+      max-width: 832px;
+    }
+
+    .skeleton-input-box {
+      width: 100%;
+      height: 140px;
+      border-radius: 16px;
+      background: var(--skeleton-input-bg);
+      border: 1px solid var(--skeleton-input-border);
+    }
+
+    /* 快捷操作骨架 */
+    .skeleton-quick-actions {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 16px;
+      flex-wrap: wrap;
+    }
+
+    .skeleton-quick-btn {
+      height: 32px;
+      border-radius: 16px;
+      background: var(--skeleton-search-bg);
+      border: 1px solid var(--skeleton-card-border);
+    }
+
+    /* ========== 消息列表骨架屏 ========== */
+    .skeleton-messages {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      background: var(--skeleton-bg);
+      overflow: hidden;
+    }
+
+    /* 顶部栏 */
+    .skeleton-messages-header {
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 8px;
+      border-bottom: 1px solid var(--skeleton-border);
+      flex-shrink: 0;
+    }
+
+    .skeleton-messages-header-left {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skeleton-messages-title {
+      width: 180px;
+      height: 16px;
+    }
+
+    .skeleton-messages-actions {
+      display: flex;
+      gap: 8px;
+    }
+
+    .skeleton-messages-action-btn {
+      width: 28px;
+      height: 28px;
+      border-radius: 4px;
+    }
+
+    /* 消息内容区域 - 居中容器 */
+    .skeleton-messages-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      overflow: hidden;
+    }
+
+    .skeleton-messages-scroll {
+      width: 100%;
+      max-width: 832px;
+      flex: 1;
+      padding: 0 8px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* 消息对容器 */
+    .skeleton-message-pair {
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 用户消息 - 右对齐气泡 */
+    .skeleton-user-message {
+      padding: 32px 16px;
+      display: flex;
+      justify-content: flex-end;
+    }
+
+    .skeleton-user-bubble {
+      border-radius: 6px 6px 0 6px;
+      min-width: 100px;
+      max-width: 70%;
+      height: 19px;
+    }
+
+    /* 助手消息 - 左对齐，头像+内容 */
+    .skeleton-assistant-message {
+      padding: 0 12px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* 助手头像行 */
+    .skeleton-avatar-container {
+      display: flex;
+      align-items: center;
+      padding-bottom: 12px;
+      gap: 10px;
+    }
+
+    .skeleton-avatar {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      flex-shrink: 0;
+    }
+
+    .skeleton-avatar-name {
+      width: 80px;
+      height: 12px;
+    }
+
+    /* 助手消息内容 */
+    .skeleton-assistant-content {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-bottom: 16px;
+    }
+
+    .skeleton-text-long {
+      height: 13px;
+      width: 90%;
+    }
+
+    .skeleton-text-medium {
+      height: 13px;
+      width: 70%;
+    }
+
+    .skeleton-text-short {
+      height: 13px;
+      width: 45%;
+    }
+
+    /* 底部输入框区域 */
+    .skeleton-messages-input-wrapper {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      padding: 16px 24px;
+      flex-shrink: 0;
+    }
+
+    .skeleton-messages-input {
+      width: 100%;
+      max-width: 832px;
+    }
+
+    .skeleton-messages-input-box {
+      width: 100%;
+      height: 100px;
+      border-radius: 12px;
+      background: var(--skeleton-input-bg);
+      border: 1px solid var(--skeleton-input-border);
+    }
+
+    /* ========== 空白主内容区（加载中状态） ========== */
+    .skeleton-main-empty {
+      flex: 1;
+      background: var(--skeleton-bg);
+    }
+
+    /* ========== 未登录状态 - Welcome Only 视图 ========== */
+    .skeleton-welcome-only {
+      display: none;
+      flex-direction: column;
+      width: 100%;
+      height: 100%;
+      background: var(--skeleton-bg);
+    }
+
+    .skeleton-welcome-only.show {
+      display: flex;
+    }
+
+    /* 顶部导航栏骨架 */
+    .skeleton-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      padding: 0 24px;
+      height: 56px;
+      display: flex;
+      align-items: center;
+    }
+
+    .skeleton-header-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+      max-width: 1440px;
+      margin: 0 auto;
+    }
+
+    .skeleton-header-logo {
+      width: 140px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .skeleton-header-nav {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .skeleton-header-nav-item {
+      width: 60px;
+      height: 20px;
+      border-radius: 4px;
+    }
+
+    .skeleton-header-login-btn {
+      width: 72px;
+      height: 36px;
+      border-radius: 18px;
+    }
+
+    /* 主内容区 - 居中的 welcome */
+    .skeleton-welcome-only-main {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+    }
+
+    /* 加载中状态 - 只显示背景色，隐藏所有骨架屏内容 */
+    .app-skeleton.loading .skeleton-sidebar,
+    .app-skeleton.loading .skeleton-main-empty,
+    .app-skeleton.loading .skeleton-welcome-only {
+      display: none;
+    }
+
+    /* 未登录时隐藏侧边栏，显示 welcome-only */
+    .app-skeleton.not-logged-in .skeleton-sidebar {
+      display: none;
+    }
+
+    .app-skeleton.not-logged-in .skeleton-main-empty {
+      display: none;
+    }
+
+    .app-skeleton.not-logged-in .skeleton-welcome-only {
+      display: flex;
+    }
+
+    /* ========== 移动端适配（≤768px） ========== */
+    @media (max-width: 768px) {
+
+      /* 隐藏侧边栏骨架 */
+      .skeleton-sidebar {
+        display: none !important;
+      }
+
+      /* 骨架屏容器改为垂直布局 */
+      .app-skeleton.show {
+        flex-direction: column;
+      }
+
+      /* 已登录时：显示移动端导航栏骨架 + 全宽主区域 */
+      .app-skeleton.show:not(.loading):not(.not-logged-in) .skeleton-mobile-nav {
+        display: flex !important;
+      }
+
+      /* 主区域全宽 */
+      .skeleton-main-empty {
+        flex: 1;
+      }
+
+      /* 未登录时的 welcome-only 视图适配 */
+      .skeleton-welcome-title {
+        width: 240px;
+      }
+
+      .skeleton-mode-selector {
+        flex-direction: column;
+        align-items: center;
+        height: auto;
+        gap: 8px;
+      }
+
+      .skeleton-mode-card {
+        max-width: 100%;
+        width: 100%;
+        border-radius: 18px;
+        border-bottom: 1px solid var(--skeleton-card-border);
+      }
+
+      .skeleton-mode-card--active,
+      .skeleton-mode-card--inactive {
+        height: auto;
+        min-height: 100px;
+      }
+
+      .skeleton-header-nav {
+        display: none;
+      }
+    }
+
+    /* 移动端导航栏骨架 - 默认隐藏 */
+    .skeleton-mobile-nav {
+      display: none;
+      height: 48px;
+      min-height: 48px;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 12px;
+      background: var(--skeleton-sidebar-bg);
+      flex-shrink: 0;
+    }
+
+    .skeleton-mobile-nav-btn {
+      width: 36px;
+      height: 36px;
+      border-radius: 8px;
+    }
+
+    .skeleton-mobile-nav-logo {
+      width: 120px;
+      height: 18px;
+      border-radius: 4px;
+    }
+  </style>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/modulepreload-polyfill-B5Qt9EMX.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-react-CddgMY8S.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vite-preload-helper-PPVm8Dsz.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-dompurify-DdwdxIb1.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-ui-shared-DW3xks7c.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-katex-DXmhg9VW.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-hljs-BWj983kd.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-markdown-DTlZDvlY.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-parsers-D9iiloVJ.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-lodash-CT_0phA3.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/genie-chat-ui-DZJReibq.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-qrcode-BSRzK8oC.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-zustand-QomKndtS.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/shared-wb-components-C42OiRcd.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/shared-account-http-DxLjwaEs.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/shared-i18n-BcPxtL6M.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/genie-monitor-CUHd95Rd.js"></script>
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/entry-shared-BJVvVSsB.js"></script>
+  
+  
+  <script type="module" crossorigin src="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/main-Btp31lJu.js"></script>
+  <link rel="stylesheet" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/vendor-katex-DLVrwanO.css">
+  <link rel="stylesheet" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/genie-chat-ui-CkIJB5Qo.css">
+  <link rel="stylesheet" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/shared-wb-components-D8OzhW2r.css">
+  
+  
+  <link rel="stylesheet" crossorigin href="//static.workbuddy.cn/web/agents/a5686c116b670834ac96838883ebaa7ab6fd228b/assets/main-BDJpUFTn.css">
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <!-- 骨架屏 - 独立于 React 根节点，通过 JS 控制淡出 -->
+  <div class="app-skeleton" id="app-skeleton">
+    <!-- 移动端导航栏骨架（仅移动端 ≤768px 显示） -->
+    <div class="skeleton-mobile-nav" style="display:none;">
+      <div class="skeleton-item skeleton-mobile-nav-btn"></div>
+      <div class="skeleton-item skeleton-mobile-nav-logo"></div>
+      <div class="skeleton-item skeleton-mobile-nav-btn"></div>
+    </div>
+
+    <!-- 已登录状态：侧边栏 + 空白主区域 -->
+    <!-- 侧边栏骨架 -->
+    <div class="skeleton-sidebar">
+      <div class="skeleton-sidebar-header">
+        <!-- Logo -->
+        <div class="skeleton-logo-wrapper">
+          <div class="skeleton-item skeleton-logo"></div>
+        </div>
+        <!-- 搜索框 + 筛选按钮 -->
+        <div class="skeleton-search-row">
+          <div class="skeleton-search"></div>
+          <div class="skeleton-item skeleton-filter-btn"></div>
+        </div>
+        <!-- 新建任务按钮 -->
+        <div class="skeleton-item skeleton-new-task-btn"></div>
+      </div>
+
+      <div class="skeleton-sidebar-content">
+        <div class="skeleton-section-list">
+          <!-- 分组 1 -->
+          <div class="skeleton-section">
+            <!-- 分组标题骨架：标题 + 箭头 -->
+            <div class="skeleton-section-header">
+              <div class="skeleton-item skeleton-section-title"></div>
+              <div class="skeleton-item skeleton-section-chevron"></div>
+            </div>
+            <!-- 卡片骨架 -->
+            <div class="skeleton-card-list">
+              <!-- 卡片 1 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+              <!-- 卡片 2 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+              <!-- 卡片 3 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+            </div>
+          </div>
+          <!-- 分组 2 -->
+          <div class="skeleton-section">
+            <!-- 分组标题骨架：标题 + 箭头 -->
+            <div class="skeleton-section-header">
+              <div class="skeleton-item skeleton-section-title"></div>
+              <div class="skeleton-item skeleton-section-chevron"></div>
+            </div>
+            <!-- 卡片骨架 -->
+            <div class="skeleton-card-list">
+              <!-- 卡片 1 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+              <!-- 卡片 2 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+              <!-- 卡片 3 -->
+              <div class="skeleton-card">
+                <div class="skeleton-card-header">
+                  <div class="skeleton-item skeleton-card-icon"></div>
+                  <div class="skeleton-item skeleton-card-title"></div>
+                  <div class="skeleton-item skeleton-card-time"></div>
+                </div>
+                <div class="skeleton-item skeleton-card-status"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 右侧空白区域 - 已登录时显示 -->
+    <div class="skeleton-main-empty" id="skeleton-main-empty"></div>
+
+    <!-- 未登录状态：全屏 Welcome Only 视图 -->
+    <div class="skeleton-welcome-only" id="skeleton-welcome-only">
+      <!-- 顶部导航栏骨架 -->
+      <header class="skeleton-header">
+        <div class="skeleton-header-content">
+          <!-- 左侧 Logo -->
+          <div class="skeleton-item skeleton-header-logo"></div>
+          <!-- 中间导航 -->
+          <nav class="skeleton-header-nav">
+            <div class="skeleton-item skeleton-header-nav-item"></div>
+            <div class="skeleton-item skeleton-header-nav-item" style="width: 50px;"></div>
+            <div class="skeleton-item skeleton-header-nav-item" style="width: 70px;"></div>
+            <div class="skeleton-item skeleton-header-nav-item" style="width: 55px;"></div>
+            <div class="skeleton-item skeleton-header-nav-item" style="width: 65px;"></div>
+          </nav>
+          <!-- 右侧登录按钮 -->
+          <div class="skeleton-item skeleton-header-login-btn"></div>
+        </div>
+      </header>
+
+      <!-- 主内容区 -->
+      <main class="skeleton-welcome-only-main">
+        <div class="skeleton-welcome">
+          <!-- 欢迎头部 -->
+          <div class="skeleton-welcome-header">
+            <div class="skeleton-item skeleton-welcome-logo"></div>
+            <div class="skeleton-item skeleton-welcome-title"></div>
+          </div>
+          <!-- 模式选择器 -->
+          <div class="skeleton-mode-selector">
+            <div class="skeleton-mode-card skeleton-mode-card--active">
+              <div class="skeleton-tag-wrapper">
+                <div class="skeleton-tag-inner">
+                  <div class="skeleton-item skeleton-tag-btn"></div>
+                  <div class="skeleton-item skeleton-tag-subtitle"></div>
+                </div>
+              </div>
+              <div class="skeleton-item skeleton-mode-desc"></div>
+            </div>
+            <div class="skeleton-mode-card skeleton-mode-card--inactive">
+              <div class="skeleton-tag-wrapper">
+                <div class="skeleton-tag-inner">
+                  <div class="skeleton-item skeleton-tag-btn"></div>
+                  <div class="skeleton-item skeleton-tag-subtitle"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- 输入框 -->
+          <div class="skeleton-input-area">
+            <div class="skeleton-input-box"></div>
+            <div class="skeleton-quick-actions">
+              <div class="skeleton-item skeleton-quick-btn" style="width: 100px;"></div>
+              <div class="skeleton-item skeleton-quick-btn" style="width: 120px;"></div>
+              <div class="skeleton-item skeleton-quick-btn" style="width: 90px;"></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <!-- 立即应用骨架屏主题和显示状态（同步脚本，确保在渲染前执行） -->
+  <script>
+    (function () {
+      const skeleton = document.getElementById('app-skeleton');
+      if (!skeleton) return;
+
+      // 检查是否需要显示骨架屏
+      if (window.__shouldShowSkeleton) {
+        skeleton.classList.add('show');
+        // 添加 loading 状态 - 请求期间只显示背景色
+        skeleton.classList.add('loading');
+        // 应用主题
+        if (window.__skeletonTheme === 'light') {
+          skeleton.classList.add('light');
+        }
+
+        // 调用 accounts 接口检查登录状态
+        checkLoginStatus();
+      }
+
+      // 检查登录状态
+      function checkLoginStatus() {
+        // 构建 API URL - 使用相对路径，让浏览器自动处理域名
+        const apiUrl = '/console/accounts';
+
+        fetch(apiUrl, {
+          method: 'GET',
+          credentials: 'include', // 携带 cookie
+          redirect: 'manual', // 不自动跟随重定向，302 表示未登录
+          headers: {
+            'Accept': 'application/json',
+          },
+        })
+          .then(function (response) {
+            if (!response.ok) {
+              // 非 200 响应视为未登录
+              return null;
+            }
+            return response.json();
+          })
+          .then(function (data) {
+            // 判断登录状态
+            // 根据返回数据判断是否已登录（假设有 data 且有 id/userId 等字段表示已登录）
+            // 统一使用 true/false，避免 0/undefined 等边界情况
+            const isLoggedIn = !!(data?.data?.accounts?.length);
+            window.__isLoggedIn = isLoggedIn;
+
+            // 移除 loading 状态，显示对应骨架屏
+            skeleton.classList.remove('loading');
+
+            if (!isLoggedIn) {
+              // 未登录：显示 welcome-only 视图
+              skeleton.classList.add('not-logged-in');
+            }
+            // 已登录：保持默认的侧边栏 + 空白区域
+          })
+          .catch(function (error) {
+            console.warn('[Skeleton] Failed to check login status:', error);
+            // 请求失败时，移除 loading 状态
+            skeleton.classList.remove('loading');
+            window.__isLoggedIn = false;
+            // 出错也显示未登录视图，因为很可能是未登录导致的
+            skeleton.classList.add('not-logged-in');
+          });
+      }
+    })();
+  </script>
+
+
+  <!-- 骨架屏淡出脚本 -->
+  <script>
+    // 平滑隐藏骨架屏（当整个应用渲染完成时触发）
+    const hideSkeleton = (delay = 0) => {
+      const skeleton = document.getElementById('app-skeleton');
+
+      if (skeleton && !skeleton.classList.contains('hidden')) {
+        const doHide = () => {
+          // 添加 hidden 类触发淡出动画
+          skeleton.classList.add('hidden');
+
+          // 动画结束后移除 DOM
+          skeleton.addEventListener('animationend', () => {
+            skeleton.remove();
+          }, { once: true });
+
+          // 备用：如果 animationend 没触发，400ms 后强制移除
+          setTimeout(() => {
+            if (skeleton.parentNode) {
+              skeleton.remove();
+            }
+          }, 400);
+        };
+
+        if (delay > 0) {
+          // 使用 requestAnimationFrame 确保在下一帧执行，让真实UI先渲染
+          requestAnimationFrame(() => {
+            setTimeout(doHide, delay);
+          });
+        } else {
+          // 即使无延迟，也使用 requestAnimationFrame 确保真实UI已渲染
+          requestAnimationFrame(() => {
+            requestAnimationFrame(doHide);
+          });
+        }
+      }
+    };
+
+    // 监听应用就绪事件 - 添加短暂延迟确保侧边栏完全渲染
+    window.addEventListener('app-ready', () => hideSkeleton(50));
+
+    // 备用 - 如果 10 秒后还没触发，自动隐藏
+    setTimeout(() => {
+      const skeleton = document.getElementById('app-skeleton');
+      if (skeleton && !skeleton.classList.contains('hidden')) {
+        hideSkeleton(0);
+      }
+    }, 1000 * 20);
+  </script>
+</body>
+
+</html>
